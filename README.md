@@ -16,6 +16,8 @@ A command-line Python tool that calculates shipping costs based on package weigh
 
 \- Surcharge for packages over 20 kg
 
+\- Code organized into functions for calculating price and printing labels
+
 
 
 \## How to run
@@ -33,4 +35,8 @@ python shipping\_label.py
 \- Input validation
 
 \- String formatting with f-strings
+
+\- Writing and calling functions, including using return values
+
+\- Refactoring working code into cleaner, reusable pieces
 

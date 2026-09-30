@@ -10,6 +10,28 @@ def print_label(name, city, weight,tracking_id, service , total_price):
     print(f"Total price : Rs. {total_price:.2f}")
     print("=" * 50)
 
+
+
+def calculate_price (weight , service):
+     if service == "express":
+        rate_per_kg = 90  #rupees per kg
+     elif service == "standard":
+        rate_per_kg = 60  #rupees per kg
+     else:
+        print("Unknown services")       
+        rate_per_kg = 60 # rupees per kg
+   
+     total_price = weight * rate_per_kg
+
+     if weight > 20:
+        surcharge = 100
+        total_price += surcharge
+        print(f"Heavy package surcharge applied: Rs.{surcharge}")
+        
+     return total_price
+
+
+
 while True :
      name = input("Enter your name : ")
 
@@ -31,20 +53,9 @@ while True :
      tracking_id = tracking_id.strip().upper()
      service    = service.strip().lower()
 
-     if service == "express":
-        rate_per_kg = 90  #rupees per kg
-     elif service == "standard":
-        rate_per_kg = 60  #rupees per kg
-     else:
-        print("Unknown services")       
-        rate_per_kg = 60 # rupees per kg
-        
-     total_price = weight * rate_per_kg
 
-     if weight > 20:
-        surcharge = 100
-        total_price += surcharge
-        print(f"Heavy package surcharge applied: Rs.{surcharge}")
+     total_price = calculate_price(weight , service)
+     
      
      print_label(name, city, weight,tracking_id, service , total_price) 
 
